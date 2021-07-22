@@ -1,0 +1,32 @@
+Arguments: 
+  C:\Program Files (x86)\nodejs\node.exe C:\Users\nahom\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add apollo-server graphql mongoose
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\node_modules\npm\bin;C:\Program Files (x86)\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\nahom\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\nahom\AppData\Local\Programs\Python\Python38\;C:\Users\nahom\node_modules\.bin;C:\Users\nahom\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nahom\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\Git\bin;D:\flutter\bin;C:\Program Files\PostgreSQL\13\bin;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.18.3
+
+Platform: 
+  win32 ia32
+
+Trace: 
+  Error: read ECONNRESET
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:205:27)
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

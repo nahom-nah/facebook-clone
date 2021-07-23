@@ -3,7 +3,7 @@ import LSidebarList from "./LSidebarList";
 
 export default function LeftSidebar() {
   return (
-    <ul className="h-screen  pt-4 px-2 capitalize">
+    <ul className="h-screen    pt-4 px-2 capitalize">
       <LSidebarList Icon={"user.png"} Text={"Nahom Balcha"} />
       <LSidebarList
         Icon={"covid-f-removebg-preview.png"}

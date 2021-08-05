@@ -30,7 +30,7 @@ export default function NavBar() {
         <HeaderIcon Icon={UserGroupIcon} />
       </div>
       <div className="flex items-center justify-end py-1 w-1/4 ">
-        <button className="flex items-center rounded-full hover:bg-gray-100 px-2 py-1 mr-4">
+        <button className="flex  items-center rounded-full hover:bg-gray-100 px-2 py-1 mr-4">
           <span className="rounded-full bg-gray-400 p-1 mr-1 border">
             <UserIcon className="h-4 text-white" />
           </span>

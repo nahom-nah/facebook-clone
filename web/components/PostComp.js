@@ -1,11 +1,46 @@
+import { useMutation, gql } from "@apollo/client";
 import {
   EmojiHappyIcon,
   PhotographIcon,
   UserIcon,
   VideoCameraIcon,
 } from "@heroicons/react/solid";
-
+import { useState } from "react";
+import { CREATE_POST } from "../graphql/mutation/post";
+import { GET_ALL_POSTS } from "../graphql/query/post";
 export default function PostComp() {
+  const [post, setPost] = useState({
+    body: "",
+  });
+
+  const handleChange = (e) => {
+    setPost({
+      ...post,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const [addPost, { data, loading, error }] = useMutation(CREATE_POST, {
+    variables: { postInput: post },
+    update(cache, { data: { createPost } }) {
+      const data = cache.readQuery({ query: GET_ALL_POSTS });
+
+      cache.writeQuery({
+        query: GET_ALL_POSTS,
+
+        data: {
+          getPosts: [...data.getPosts, createPost],
+        },
+      });
+    },
+  });
+  const handleSubmit = () => {
+    addPost();
+    setPost({
+      ...post,
+      body: "",
+    });
+  };
+
   return (
     <div className="bg-white px-6 py-3 rounded-md shadow-md">
       <div className="flex items-center">
@@ -16,8 +51,16 @@ export default function PostComp() {
         <span className="px-3 py-2 rounded-full w-96 bg-gray-100">
           <input
             type="text"
+            name="body"
+            value={post.body}
             placeholder="What's on your mind, Nahom?"
             className="outline-none bg-gray-100  w-full text-black"
+            onChange={handleChange}
+            onKeyUp={(e) => {
+              if (e.keyCode === 13) {
+                handleSubmit();
+              }
+            }}
           />
         </span>
       </div>
